@@ -31,6 +31,10 @@ if choice in ('1', '2', '3', '4'):
     elif choice == '3':
         print(f"{num1} * {num2} = {multiplcation(num1,num2)}")
     elif choice == '4':
-        print(f"{num1} / {num2} = {division(num1,num2)}")
+       try:
+            print(f"{num1} / {num2} = {division(num1,num2)}")
+       except ZeroDivisionError:
+            print("Numbers divided by zero causes the computer to explode please choose a different number")
 else:
+    
     print("Invalid input. Please choose a valid operation.")

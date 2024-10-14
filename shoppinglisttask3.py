@@ -14,20 +14,29 @@ def grocery_list():
         choice = input("Enter your choice: ")
         
         if choice == "1":
-            new_item = input("Enter the item you want to add to the shopping list: ")
-            products.append(new_item)
-            print(f"{new_item} has been added to the grocery list")
-            
+            while True:
+                new_item = input("Enter the item you want to add to the shopping list: ")
+                products.append(new_item)
+                print(f"{new_item} has been added to the grocery list")
+                add_item=(input("Do you want to add another item?  (y or n)")).lower()
+                if add_item != "y":
+                    break
+                
         elif choice == "2":
             remove_item = input("Enter the item you would like to remove from the list: ")
             products.remove(remove_item)
             print(f"{remove_item} has been removed from your list")
-            
+            remove_more_item=(input("do you want to add remove more items?  (y or n)")).lower()
+            if remove_more_item!= "y":
+                break
         elif choice =="3":
-            print (f"Your list :\n {products}")
+            print ("Your list is: " )
+            for item in products:
+                print(item)
+            print("End of List")
             
         elif choice =="4":
-            print("No need to stray away fromyour shopping list.")
+            print("No need to stray away from your shopping list.")
             break
             
 
